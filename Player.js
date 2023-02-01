@@ -11,4 +11,8 @@ class Player {
         this.position = initialPosition;
         this.velocity = initialVelocity;
     }
+
+    update () {
+        
+    }
 }
