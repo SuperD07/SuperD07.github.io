@@ -14,6 +14,7 @@ class Player {
     }
 
     update () {
-
+        ctx.fillStyle = 'red';
+        ctx.fillRect(this.position.x, this.position.y, this.hitbox.width, this.hitbox.height);
     }
 }
