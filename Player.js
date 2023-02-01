@@ -1,5 +1,5 @@
 class Player {
-    constructor ({ initialPosition, initialVelocity }) {
+    constructor ({ initialPosition, initialVelocity, hitbox }) {
         this.factory = new PlayerStateFactory();
         this.groundedState = this.factory.groundedState;
         this.fallingState = this.factory.fallingState;
@@ -10,9 +10,10 @@ class Player {
 
         this.position = initialPosition;
         this.velocity = initialVelocity;
+        this.hitbox = hitbox;
     }
 
     update () {
-        
+
     }
 }
