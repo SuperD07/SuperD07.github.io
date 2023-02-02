@@ -1,3 +1,3 @@
-class PlayerGroundedState {
+class PlayerGroundedState extends PlayerBaseState {
     constructor () {}
 }

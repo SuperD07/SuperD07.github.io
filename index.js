@@ -1,6 +1,8 @@
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
+const h1 = document.querySelector('h1');
+
 const canvasWidth = canvas.width = 512;
 const canvasHeight = canvas.height = 256;
 
@@ -13,6 +15,7 @@ const player = new Player({
 
 const loop = () => {
     player.update();
+    h1.innerText = player.currentState[0];
 
     window.requestAnimationFrame(loop);
 }
