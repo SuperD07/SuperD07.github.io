@@ -14,8 +14,12 @@ const player = new Player({
 
 
 const loop = () => {
+    try {
     player.update();
     h1.innerText = player.currentState.name[0];
+    } catch (e) {
+        h1.innerHTML = e.message;
+    }
 
     window.requestAnimationFrame(loop);
 }
