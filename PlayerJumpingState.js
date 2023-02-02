@@ -1,3 +1,5 @@
 class PlayerJumpingState {
-    constructor () {}
+    constructor () {
+        super('Jumping')
+    }
 }

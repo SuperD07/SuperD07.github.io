@@ -1,3 +1,5 @@
 class PlayerFallingState {
-    constructor () {}
+    constructor () {
+        super('Falling')
+    }
 }

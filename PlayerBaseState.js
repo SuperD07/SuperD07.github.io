@@ -1,5 +1,5 @@
 class PlayerBaseState {
-    constructor () {}
-
-    
+    constructor (n) {
+        this.name = n;
+    }
 }

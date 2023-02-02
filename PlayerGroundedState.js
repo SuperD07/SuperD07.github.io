@@ -1,3 +1,5 @@
 class PlayerGroundedState extends PlayerBaseState {
-    constructor () {}
+    constructor () {
+        super('Grounded')
+    }
 }

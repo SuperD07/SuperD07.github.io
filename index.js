@@ -15,7 +15,7 @@ const player = new Player({
 
 const loop = () => {
     player.update();
-    h1.innerText = player.currentState[0];
+    h1.innerText = player.currentState.name[0];
 
     window.requestAnimationFrame(loop);
 }
