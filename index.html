@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XOXO</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="selectedPiece"></div>
+    <div class="pieces"></div>
+    <script>
+        document.createAttribute('hasPoint');
+        const table = document.createElement('table');
+        for (let i = 0; i < 5; i++) {
+            const tr = document.createElement('tr');
+            for (let j = 0; j < 10; j++) {
+                const td = document.createElement('td');
+                td.setAttribute('hasPoint', (j + i) % 2 == 0);
+                td.id = 'cell' + (i*10 + j);
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        document.querySelector('body').appendChild(table);
+    </script>
+
+    <script src="scripts/Piece.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
