@@ -28,9 +28,6 @@ const selectPiece = e => {
         selectedBox.classList.remove('hidden');
     }
 };
-const selectPieceMobile = e => {
-    const target = e.target.nodeName == 'IMG' ? e.target.parentNode : e.target;
-}
 const rotatePiece = e => {
     const target = e.target.parentNode.previousSibling;
     if (target.getAttribute('disabled')) return;
@@ -179,9 +176,6 @@ document.ontouchend = e => {
     let [x, y] = [e.touches[0].clientX, e.touches[0].clientY];
     x -= 20;
     y -= 20;
-    if (x > 1064 || y > 534) {
-        return;
-    }
 
     if (!selectedPiece) {
         const posX = Math.floor(x/105);
