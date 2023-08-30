@@ -28,6 +28,9 @@ const selectPiece = e => {
         selectedBox.classList.remove('hidden');
     }
 };
+const selectPieceMobile = e => {
+    const target = e.target.nodeName == 'IMG' ? e.target.parentNode : e.target;
+}
 const rotatePiece = e => {
     const target = e.target.parentNode.previousSibling;
     if (target.getAttribute('disabled')) return;
