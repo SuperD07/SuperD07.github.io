@@ -1,0 +1,151 @@
+
+* {
+    user-select: none;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+table {
+    width: fit-content;
+    border-collapse: collapse;
+}
+
+
+td {
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgb(88, 88, 88);
+    margin: 2px;
+}
+@media (min-width: 768px) {
+    td {
+        width: 100px;
+        height: 100px;
+        border-width: 4px;
+    }
+}
+
+td[hasPoint = 'true']:after {
+    display: block;
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@media (min-width: 768px) {
+    td[hasPoint = 'true']:after {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+.pieces {
+    width: 380px;
+    height: fit-content;
+    margin-top: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+@media (min-width: 768px) {
+    .pieces {
+        width: 100%;
+        margin-top: 30px;
+        flex-direction: row;
+    }
+}
+
+
+.box {
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    height: 50px;
+    gap: 10px;
+    align-items: center;
+    border: 2px solid rgb(88, 88, 88);
+}
+@media (min-width: 768px) {
+    .box {
+        flex-direction: column;
+        width: 100px;
+        height: 100px;
+        border-width: 4px;
+        gap: 0;
+    }
+}
+
+.piece {
+    width: 70px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (min-width: 768px) {
+    .piece {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.piece[disabled = true]>img {
+    filter: brightness(40%);
+}
+.controls {
+    width: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+@media (min-width: 768px) {
+    .controls {
+        width: 100%;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+    }
+}
+
+.rotate, .flip {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', 'Arial', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .rotate, .flip {
+        font-size: 20px;
+    }
+}
+
+.rotate:active, .flip:active {
+    filter: brightness(70%);
+}
+
+.selectedPiece {
+    position: absolute;
+}
