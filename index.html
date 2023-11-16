@@ -24,10 +24,10 @@
         };
         const createListDOM = (list, items) => {
             const ul = document.createElement('ul');
-            for (let i = 0; i < names.length; i++) {
+            for (let i = 0; i < list.length; i++) {
                 const li = document.createElement('li');
                 const label = document.createElement('p');
-                label.innerText = names[i];
+                label.innerText = list[i];
                 if (i%interval == interval-1) li.style.borderBottom = '2px solid black';
                 li.append(label);
                 ul.appendChild(li);
