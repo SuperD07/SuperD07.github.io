@@ -7,11 +7,20 @@
 </head>
 <body>
     <script>
+        Array.prototype.iterate = function (items, times) {
+            const t = [];
+            for (let i = 0; i < this.length; i++) {
+                const j = Math.floor(i/items);
+                t[j] |= [];
+                t[j].push(this[i]);
+            }
+        };
+
         const startingNames = 'abcdefghijklmnopqrstuvwxyz'.split('');
         const interval = 4;
 
         const iterations = 0;
-        const names = startingNames.iterate(iterations);
+        const names = startingNames.iterate(interval, iterations);
 
         const ul = document.createElement('ul');
         for (let i = 0; i < names.length; i++) {
@@ -23,10 +32,6 @@
             ul.appendChild(li);
         }
         document.querySelector('body').appendChild(ul);
-
-        Array.prototype.iterate = function (times) {
-            document.write(this)
-        };
     </script>
 </body>
 </html>
