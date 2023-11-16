@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turni</title>
+</head>
+<body>
     <script>
         const startingNames = 'abcdefghijklmnopqrstuvwx'.split('');
         const interval = 4;
@@ -47,15 +49,11 @@
                 if (value < 0) alert('Valore non valido');
                 else {
                     const names = iterate(startingNames, interval, t);
-                    createListDOM(names, interval)
+                    createListDOM(names, interval);
                 }
             };
             document.querySelector('body').append(label, input, button);
         };
-
-        createInputDOM();
     </script>
-</head>
-<body>
 </body>
 </html>
