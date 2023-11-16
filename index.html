@@ -14,7 +14,7 @@
         for (let i = 0; i < names.length; i++) {
             const li = document.createElement('li');
             li.innerText = names[i];
-            if (i%interval == 0) li.style.borderBottom = '2px solid black';
+            if (i%interval-1 == 0) li.style.borderBottom = '2px solid black';
             ul.appendChild(li);
         }
         document.querySelector('body').appendChild(ul);
