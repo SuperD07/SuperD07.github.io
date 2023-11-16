@@ -7,16 +7,14 @@
 </head>
 <body>
     <script>
-        const names = [
-            'a',
-            'b',
-            'c',
-        ];
+        const names = 'abcdefghijklmnopqrstuvwxyz'.split();
+        const interval = 4;
 
         const ul = document.createElement('ul');
         for (let i = 0; i < names.length; i++) {
             const li = document.createElement('li');
             li.innerText = names[i];
+            if (i%interval == 0) li.style.borderBottom = '2px solid black';
             ul.appendChild(li);
         }
         document.querySelector('body').appendChild(ul);
