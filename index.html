@@ -17,15 +17,14 @@
                 const first = t.shift();
                 t.append(first);
             }
-            //return t.flat();
-            return array;
+            return t.flat();
         };
 
         const startingNames = 'abcdefghijklmnopqrstuvwxyz'.split('');
         const interval = 4;
 
         const iterations = 0;
-        const names = iterate(names, interval, iterations);
+        const names = iterate(startingNames, interval, iterations);
 
         const ul = document.createElement('ul');
         for (let i = 0; i < names.length; i++) {
