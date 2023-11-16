@@ -13,6 +13,11 @@
         body>* {
             width: 150px;
         }
+        li {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
     </style>
 </head>
 <body>
@@ -55,7 +60,7 @@
                     createListDOM(names, interval);
                 };
                 if (i%interval == interval-1) li.style.borderBottom = '2px solid black';
-                li.append(label);
+                li.append(label, bUp, bDown);
                 ul.appendChild(li);
             }
             document.querySelector('#wrapper').appendChild(ul);
