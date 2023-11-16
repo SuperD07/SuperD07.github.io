@@ -40,6 +40,15 @@
                 const li = document.createElement('li');
                 const label = document.createElement('p');
                 label.innerText = list[i];
+                const bUp = document.createElement('button');
+                bUp.innerHTML = '∧';
+                bUp.classList.add('sideBtn');
+                bUp.onclick = () => {
+                    
+                };
+                const bDown = document.createElement('button');
+                bDown.innerHTML = '∨';
+                bDown.classList.add('sideBtn');
                 if (i%interval == interval-1) li.style.borderBottom = '2px solid black';
                 li.append(label);
                 ul.appendChild(li);
