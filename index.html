@@ -7,21 +7,24 @@
 </head>
 <body>
     <script>
-        Array.prototype.iterate = function (items, times) {
+        const iterate = (array, groups, times) => {
             const t = [];
-            for (let i = 0; i < this.length; i++) {
-                const j = Math.floor(i/items);
-                t[j] |= [];
-                t[j].push(this[i]);
+            array.forEach((name, i) => {
+                t[Math.floor(i/groups)] ||= [];
+                t[Math.floor(i/groups)].push(name);
+            });
+            for (let i = 0; i < times; i++) {
+                const first = t.shift();
+                t.append(first);
             }
-            return this;
+            return t;
         };
 
         const startingNames = 'abcdefghijklmnopqrstuvwxyz'.split('');
         const interval = 4;
 
         const iterations = 0;
-        const names = startingNames.iterate(interval, iterations);
+        const names = iterate(names, interval, iterations);
 
         const ul = document.createElement('ul');
         for (let i = 0; i < names.length; i++) {
