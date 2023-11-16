@@ -7,8 +7,11 @@
 </head>
 <body>
     <script>
-        const names = 'abcdefghijklmnopqrstuvwxyz'.split('');
+        const startingNames = 'abcdefghijklmnopqrstuvwxyz'.split('');
         const interval = 4;
+
+        const iterations = 0;
+        const names = startingNames.iterate(iterations);
 
         const ul = document.createElement('ul');
         for (let i = 0; i < names.length; i++) {
@@ -20,6 +23,10 @@
             ul.appendChild(li);
         }
         document.querySelector('body').appendChild(ul);
+
+        Array.prototype.iterate = function (times) {
+            document.write(this)
+        };
     </script>
 </body>
 </html>
