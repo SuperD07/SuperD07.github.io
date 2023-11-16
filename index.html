@@ -38,6 +38,10 @@
             }
             return t.flat();
         };
+        const swap = (array, i, j) => {
+            array[i], array[j] = array[j], array[i];
+            return array;
+        };
         const createListDOM = (list, items) => {
             document.querySelector('#wrapper').innerHTML = '';
             const ul = document.createElement('ul');
