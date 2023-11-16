@@ -46,7 +46,7 @@
             button.innerHTML = 'Vedi turni';
             button.onclick = () => {
                 const t = document.querySelector('#inputTurnazioniFatte').value;
-                if (value < 0) alert('Valore non valido');
+                if (t < 0) alert('Valore non valido');
                 else {
                     const names = iterate(startingNames, interval, t);
                     createListDOM(names, interval);
