@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turni</title>
-</head>
-<body>
     <script>
+        const startingNames = 'abcdefghijklmnopqrstuvwx'.split('');
+        const interval = 4;
+
         const iterate = (array, groups, times) => {
             const t = [];
             array.forEach((name, i) => {
@@ -19,23 +20,42 @@
             }
             return t.flat();
         };
+        const createListDOM = (list, items) => {
+            const ul = document.createElement('ul');
+            for (let i = 0; i < names.length; i++) {
+                const li = document.createElement('li');
+                const label = document.createElement('p');
+                label.innerText = names[i];
+                if (i%interval == interval-1) li.style.borderBottom = '2px solid black';
+                li.append(label);
+                ul.appendChild(li);
+            }
+            document.querySelector('body').appendChild(ul);
+        };
+        const createInputDOM = () => {
+            document.querySelector('body').innerHTML = '';
+            const input = document.createElement('input');
+            input.type = 'number';
+            input.id = 'inputTurnazioniFatte';
+            const label = document.createElement('label');
+            label.for = 'inputTurnazioniFatte';
+            label.innerText = 'Turno: ';
+            const button = document.createElement('button');
+            button.innerHTML = 'Vedi turni';
+            button.onclick = () => {
+                const t = document.querySelector('#inputTurnazioniFatte').value;
+                if (value < 0) alert('Valore non valido');
+                else {
+                    const names = iterate(startingNames, interval, t);
+                    createListDOM(names, interval)
+                }
+            };
+            document.querySelector('body').append(label, input, button);
+        };
 
-        const startingNames = 'abcdefghijklmnopqrstuvwx'.split('');
-        const interval = 4;
-
-        const iterations = 1;
-        const names = iterate(startingNames, interval, iterations);
-
-        const ul = document.createElement('ul');
-        for (let i = 0; i < names.length; i++) {
-            const li = document.createElement('li');
-            const label = document.createElement('p');
-            label.innerText = names[i];
-            if (i%interval == interval-1) li.style.borderBottom = '2px solid black';
-            li.append(label);
-            ul.appendChild(li);
-        }
-        document.querySelector('body').appendChild(ul);
+        createInputDOM();
     </script>
+</head>
+<body>
 </body>
 </html>
