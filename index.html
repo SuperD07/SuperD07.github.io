@@ -24,6 +24,7 @@
             return t.flat();
         };
         const createListDOM = (list, items) => {
+            document.querySelector('#wrapper').innerHTML = '';
             const ul = document.createElement('ul');
             for (let i = 0; i < list.length; i++) {
                 const li = document.createElement('li');
@@ -36,7 +37,6 @@
             document.querySelector('#wrapper').appendChild(ul);
         };
         const createInputDOM = () => {
-            document.querySelector('#wrapper').innerHTML = '';
             const input = document.createElement('input');
             input.type = 'number';
             input.id = 'inputTurnazioniFatte';
@@ -53,7 +53,7 @@
                     createListDOM(names, interval);
                 }
             };
-            document.querySelector('#wrapper').append(label, input, button);
+            document.querySelector('body').append(label, input, button);
         };
 
         createInputDOM();
