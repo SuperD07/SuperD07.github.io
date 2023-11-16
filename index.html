@@ -6,6 +6,7 @@
     <title>Turni</title>
 </head>
 <body>
+    <div id="wrapper"></div>
     <script>
         const startingNames = 'abcdefghijklmnopqrstuvwx'.split('');
         const interval = 4;
@@ -32,10 +33,10 @@
                 li.append(label);
                 ul.appendChild(li);
             }
-            document.querySelector('body').appendChild(ul);
+            document.querySelector('#wrapper').appendChild(ul);
         };
         const createInputDOM = () => {
-            document.querySelector('body').innerHTML = '';
+            document.querySelector('#wrapper').innerHTML = '';
             const input = document.createElement('input');
             input.type = 'number';
             input.id = 'inputTurnazioniFatte';
@@ -52,7 +53,7 @@
                     createListDOM(names, interval);
                 }
             };
-            document.querySelector('body').append(label, input, button);
+            document.querySelector('#wrapper').append(label, input, button);
         };
 
         createInputDOM();
