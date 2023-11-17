@@ -23,7 +23,7 @@
 <body>
     <div id="wrapper"></div>
     <script>
-        const startingNames = 'abcdefghijklmnopqrstuvwx'.split('');
+        const startingNames = await fetch('./data.json').then(r => r.JSON());
         const interval = 4;
 
         const iterate = (array, groups, times) => {
