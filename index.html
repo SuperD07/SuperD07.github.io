@@ -26,7 +26,7 @@
 <body>
     <div id="wrapper"></div>
     <script>
-        const startingNames = 'abcdefghijklmnopqrstuvwx'.split('');
+        let names = 'abcdefghijklmnopqrstuvwx'.split('');
         //const startingNames = await data.JSON();
         const interval = 4;
 
@@ -59,14 +59,14 @@
                 bUp.innerHTML = '∧';
                 bUp.classList.add('sideBtn');
                 bUp.onclick = () => {
-                    const names = swap(startingNames, i, i-1);
+                    names = swap(startingNames, i, i-1);
                     createListDOM(names, interval);
                 };
                 const bDown = document.createElement('button');
                 bDown.innerHTML = '∨';
                 bDown.classList.add('sideBtn');
                 bDown.onclick = () => {
-                    const names = swap(startingNames, i, i+1);
+                    names = swap(startingNames, i, i+1);
                     createListDOM(names, interval);
                 };
                 if (i%interval == interval-1) li.style.borderBottom = '2px solid black';
@@ -88,7 +88,7 @@
                 const t = document.querySelector('#inputTurnazioniFatte').value;
                 if (t < 0) alert('Valore non valido');
                 else {
-                    const names = iterate(startingNames, interval, t);
+                    names = iterate(startingNames, interval, t);
                     createListDOM(names, interval);
                 }
             };
