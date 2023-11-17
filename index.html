@@ -23,8 +23,8 @@
 <body>
     <div id="wrapper"></div>
     <script>
-        const startingNames = await fetch('./data.json').JSON();
-        console.log(startingNames)
+        const data = await fetch('data/json');
+        console.log(data)
         const interval = 4;
 
         const iterate = (array, groups, times) => {
