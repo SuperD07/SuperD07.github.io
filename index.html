@@ -21,10 +21,14 @@
     </style>
 </head>
 <body>
+    <p class="log"></p>
     <div id="wrapper"></div>
     <script>
+        function log (d) {
+            document.querySelector('.log').innerText = d;
+        }
         const data = await fetch('data/json');
-        document.write(data)
+
         const interval = 4;
 
         const iterate = (array, groups, times) => {
