@@ -23,7 +23,7 @@
 <body>
     <div id="wrapper"></div>
     <script>
-        const startingNames = await fetch('./data.json').then(r => r.JSON());
+        const startingNames = await fetch('./data.json').JSON();
         console.log(startingNames)
         const interval = 4;
 
