@@ -28,7 +28,7 @@
             document.querySelector('.log').innerText = d;
         }
         const data = await fetch('data/json');
-
+        log(data)
         const interval = 4;
 
         const iterate = (array, groups, times) => {
