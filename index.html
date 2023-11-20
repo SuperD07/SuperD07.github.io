@@ -88,7 +88,7 @@
                 const t = document.querySelector('#inputTurnazioniFatte').value;
                 if (t < 0) alert('Valore non valido');
                 else {
-                    names = iterate(startingNames, interval, t);
+                    names = iterate(names, interval, t);
                     createListDOM(names, interval);
                 }
             };
